@@ -117,7 +117,7 @@ Check the dataset's current license and terms before redistributing any data.
 
 ## Method
 
-1. Load the PaySim CSV into DuckDB and create analysis fields such as transaction ID, simulated day, hour, and clearly labelled status/channel proxies.
+1. Load the PaySim CSV into MySQL and create analysis fields such as transaction ID, simulated day, hour, and clearly labelled status/channel proxies.
 2. Run SQL queries to calculate the project KPIs.
 3. Export analysis tables to `outputs/` for review and dashboard use.
 4. Recalculate key measures in pandas and run data-quality checks in `validate.py`.
