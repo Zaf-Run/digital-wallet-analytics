@@ -1,0 +1,6 @@
+txn_type,fee_rate,note
+CASH_IN,0.0,"Customer deposits at agent, no customer fee assumed"
+CASH_OUT,0.01,"Agent withdrawal, 1.0% customer fee assumed"
+TRANSFER,0.005,"P2P transfer, 0.5% customer fee assumed"
+PAYMENT,0.008,"Merchant discount rate, 0.8% assumed"
+DEBIT,0.0,"Debit to bank, no fee assumed"

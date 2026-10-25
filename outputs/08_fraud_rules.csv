@@ -1,0 +1,6 @@
+txn_type,fraud_txns,fraud_value,flagged_by_rule,fraud_and_flagged,account_drain_pattern,rule_recall_pct
+CASH_OUT,4116,5989202243.829971,0,0,4075,0.0
+TRANSFER,4097,6067213184.009973,16,16,3943,0.39
+PAYMENT,0,0.0,0,0,0,
+DEBIT,0,0.0,0,0,0,
+CASH_IN,0,0.0,0,0,0,
