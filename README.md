@@ -1,6 +1,6 @@
 # Digital Wallet Performance & Customer Transaction Analytics
 
-**A SQL, Python and Power BI portfolio project using the PaySim mobile-money simulation**
+**A entry level portfolio project using the PaySim mobile-money simulation**
 
 This project examines transaction activity, transaction value, cancellation patterns, wallet balances and an illustrative fee model using **6,362,620 simulated transactions across 31 simulated days**. DuckDB is used to query the transaction log, Python to validate the results, and Power BI to present the findings.
 
