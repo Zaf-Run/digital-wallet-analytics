@@ -206,4 +206,4 @@ charts/               Images used in this README
 - **SQL:** DuckDB
 - **Analysis and validation:** Python, pandas
 - **Charts:** Matplotlib
-- **Dashboard:** Power BI (built from the exported analysis tables and dashboard specification)
+
