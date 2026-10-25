@@ -203,7 +203,7 @@ charts/               Images used in this README
 
 ## Tools
 
-- **SQL:** DuckDB
+- **SQL:** MySQL
 - **Analysis and validation:** Python, pandas
 - **Charts:** Matplotlib
 
