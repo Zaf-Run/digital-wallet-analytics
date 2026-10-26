@@ -1,0 +1,6 @@
+type,txn_count,txn_value,counterparty
+CASH_IN,1399284,236367391912.46,Customer account
+CASH_OUT,2237500,394412995224.49,Customer account
+DEBIT,41432,227199221.28,Customer account
+PAYMENT,2151495,28093371138.37,Merchant
+TRANSFER,532909,485291987263.17,Customer account

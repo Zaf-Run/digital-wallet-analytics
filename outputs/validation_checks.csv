@@ -1,0 +1,17 @@
+check,result,expected,status,note
+Row count equals file data lines,6362620,6362620,PASS,
+Null values across all columns,0,0,PASS,
+Negative amounts,0,0,PASS,
+Zero amounts,16,0,REVIEW,Zero value rows are all fraud labelled cash outs
+"Duplicate rows on step, type, amount, customer, destination",0,0,PASS,No retries or duplicates detectable
+File sorted by step (needed for last observation logic),True,True,PASS,
+Distinct hourly steps,743,743,PASS,
+Calendar days covered (step / 24),31,31,PASS,Day 31 holds 23 hours only
+Distinct transaction types,5,5,PASS,
+Fraud labelled rows only in TRANSFER and CASH_OUT,True,True,PASS,
+Flagged rows are all fraud labelled,True,True,PASS,
+Merchant destinations only on PAYMENT,True,True,PASS,
+Originator balance reconciles to amount,0.4339,1.0000,REVIEW,Pre and post balances reconcile for a minority of rows; see balance section
+Debit rows from an account with zero opening balance,2088969,0,REVIEW,Not possible in a live ledger
+Debit rows where amount exceeds opening balance,3601543,0,REVIEW,Overdraft or unreliable balance field
+Customer destination balance reconciles to amount,0.6028,1.0000,REVIEW,Destination balances not usable
