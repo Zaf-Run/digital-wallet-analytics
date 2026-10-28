@@ -1,8 +1,8 @@
-# Digital Wallet Analytics**
+# Digital Wallet Analytics
 
 Customer Engagement, Transaction Performance, Wallet Balances, and Revenue Analytics
 
-An entry level analytics portfolio project built on 6.36 million simulated mobile-money transactions. Tools: MySQL, Python (pandas), Excel, Power BI.
+An portfolio project built on 6.36 million simulated mobile-money transactions. Tools: MySQL, Python (pandas), Excel, Power BI.
 
 ## 1. Executive summary**
 
