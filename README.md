@@ -70,7 +70,7 @@ A wallet provider needs a consistent view of customer activity, transaction perf
 
 7. Which transaction types and customer segments drive revenue under a stated fee scenario?
 
-## 5. Intended stakeholders**
+## 5. Intended stakeholders
 
 Product managers (usage and mix), risk and fraud operations (exception patterns), finance and revenue assurance (fee scenario, concentration), data engineering (data gaps to fix), and hiring managers reviewing the portfolio.
 
