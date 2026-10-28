@@ -4,7 +4,7 @@ Customer Engagement, Transaction Performance, Wallet Balances, and Revenue Analy
 
 An portfolio project built on 6.36 million simulated mobile-money transactions. Tools: MySQL, Python (pandas), Excel, Power BI.
 
-## 1. Executive summary**
+## 1. Executive summary
 
 This project analyzes a month of digital wallet activity to answer four questions. Who is active, how do transactions perform, what do balances look like, and where does revenue come from.
 
@@ -38,11 +38,11 @@ The charts below summarize the transaction mix and the modeled fee scenario. The
 
 ![Modeled net revenue by transaction type](charts/modeled_net_revenue_share.png)
 
-## 2. Business problem**
+## 2. Business problem
 
 A wallet provider needs a consistent view of customer activity, transaction performance, wallet balances, and revenue after partner costs. Without shared definitions, product, risk, and finance teams can end up working from different numbers. This project establishes a consistent set of metrics and uses them to outline a three-page dashboard.
 
-## 3. Business objectives**
+## 3. Business objectives
 
 1. Define and measure active users with one written definition.
 
@@ -54,7 +54,7 @@ A wallet provider needs a consistent view of customer activity, transaction perf
 
 5. Turn findings into actions for product, risk, finance and data teams.
 
-## 4. Key research questions**
+## 4. Key research questions
 
 1. How many unique customers transact each day and in the month?
 
@@ -74,13 +74,13 @@ A wallet provider needs a consistent view of customer activity, transaction perf
 
 Product managers (usage and mix), risk and fraud operations (exception patterns), finance and revenue assurance (fee scenario, concentration), data engineering (data gaps to fix), and hiring managers reviewing the portfolio.
 
-## 6. Analytical scope**
+## 6. Analytical scope
 
 In scope: customer activity, transaction performance, balance integrity, scenario revenue, and a three page dashboard.
 
 Out of scope: predictive modeling, real fee reconciliation, customer lifetime value, and any claim about a real provider.
 
-## 7. Dataset description**
+## 7. Dataset description
 
 File: PS_20174392719_1491204439457_log.csv (PaySim). One row is one transaction event. Time is measured in hourly steps, 1 to 743.
 
@@ -110,7 +110,7 @@ balance snapshots: not available. Last observed post transaction balance is used
 
 Recommended fields for a real project: status and failure_reason, fee and partner_fee tables, registration_date, channel, daily balance snapshots, refund and chargeback tables.
 
-## 8. Terminology used**
+## 8. Terminology used
 
 Transaction volume: count of transactions.
 
@@ -130,7 +130,7 @@ Fraud labeled transaction: a transaction marked as fraud in the data. Its value 
 
 Active user: a sender account with at least one non-fraud transaction in the period.
 
-## 9. Tools and methodology**
+## 9. Tools and methodology
 
 1. Load the CSV into MySQL staging (sql/01) and Python.
 
@@ -152,11 +152,11 @@ Balance method: last observed post transaction balance per sender, using all row
 
 Revenue method: fee = min(amount x gross rate, cap) on non-fraud rows. Partner cost is a fixed share of the fee. Rates are in python/analysis.py and sql/02 and can be changed. Scenarios low, base and high use 0.5×, 1.0×, and 1.5× times the gross rate.
 
-## 10. Deliverables**
+## 10. Deliverables
 
 README.md, python/analysis.py, python/build_excel.py, sql/01 to 07, outputs/ (19 summary files), excel/wallet_analytics_workbook.xlsx, docs/powerbi_dashboard_spec.md, docs/validation_log.md, docs/business_recommendations.md.
 
-## 11. Key findings**
+## 11. Key findings
 
 Engagement. MAU is 6,345,122. Average DAU is 204,962. 6,335,852 customers transact once, 9,270 transact twice or three times. Returning customers per day range from 0 to 1,075. By last active day, 11,019 customers were last seen on day 30 and 54,629 on day 29, so inactivity cannot be separated from the data structure.
 
@@ -170,11 +170,15 @@ Balances. Across all senders, the last observed balance is zero for 56.7% of cus
 
 Revenue scenario (assumed rates). Gross 7.12 billion, partner cost 3.65 billion, net 3.47 billion. Average gross fee per billable transaction 1,121. Top 1% of customers by value send 21% of value and earn 7% of net revenue. Top 10% send 52% of value and earn 40% of net revenue. Revenue is less concentrated than value, probably because of the fee cap and the mix of types.
 
-## 12. Recommendations**
+## 12. Recommendations
 
-See docs/business_recommendations.md. In short: fix data capture first (status, fees, registration, balance snapshots), add a full balance drain rule for transfers and cash outs to fraud screening and test it on real data, review overnight controls, report DAU/MAU only on data with repeat behavior, and treat fee revenue figures as scenarios until fee records exist.
+1. Fix data capture first (status, fees, registration, balance snapshots)
+2. Add a full balance drain rule for transfers and cash outs to fraud screening and test it on real data
+3. Review overnight controls
+4. Report DAU/MAU only on data with repeat behavior
+5. Treat fee revenue figures as scenarios until fee records exist
 
-## 13. Assumptions and limitations**
+## 13. Assumptions and limitations
 
 1. The data is simulated. Findings describe the data, not a real provider.
 
@@ -194,11 +198,11 @@ See docs/business_recommendations.md. In short: fix data capture first (status, 
 
 9. Fee model in Excel uses band averages and is about 2% above the exact base case.
 
-## 14. How this relates to digital banking and payments operations**
+## 14. How this relates to digital banking and payments operations
 
 The same questions run every day in a wallet or digital bank. Product teams track active users and transaction mix. Payment operations track failure and decline rates by reason, partner and hour. Risk teams track fraud rates, exposure and the performance of screening rules. Finance tracks fees, partner costs, refunds and chargebacks, and reconciles wallet balances to the ledger. Balance reconciliation errors like the ones found here would trigger an incident in a real organization. This project practices those tasks on a public dataset.
 
-## 15. How to reproduce**
+## 15. How to reproduce
 
 1. Download PaySim and unzip.
 
